@@ -3,7 +3,7 @@
    * Plugin Name: ConvertCalculator
    * Plugin URI: https://www.convertcalculator.com/platforms/wordpress
    * Description: Easily embed ConvertCalculator calculators' on your WordPress website
-   * Version: 1.1.1
+   * Version: 1.1.2
    * Author: ConvertCalculator
    * Author URI: http://www.convertcalculator.com
    */
@@ -19,9 +19,15 @@
       return '<div>You need to add an "id" to the "convertcalculator" shortcode. You can find the calculator id in the <a href="https://app.convertcalculator.co">editor</a>.';
     }
 
-    $type = isset($atts['type']) ? $atts['type'] : "framed";
+    if ($atts["type"] == "in-page") {
+      $type = "in-page";
+    } else {
+      $type = "framed";
+    }
 
-    return '<div class="calculator" data-calc-id="' . $atts['id'] .'" data-type="' . $type . '"></div><script src="https://scripts.convertcalculator.com/embed.js" async="true"></script>';
+    $id = htmlspecialchars($atts['id']);
+
+    return '<div class="calculator" data-calc-id="' . $id .'" data-type="' . $type . '"></div><script src="https://scripts.convertcalculator.com/embed.js" async="true"></script>';
   }
 
   add_shortcode( 'convertcalculator', 'convertcalculator_embed_calculator' );

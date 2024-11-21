@@ -2,8 +2,8 @@
 Contributors: convertcalculator
 Tags: convertcalculator, calculator, form, calculator form, price quote calculator, product configurator, configurator, calculator builder, product configurator builder,
 Requires at least: 4.4
-Tested up to: 6.0.2
-Stable tag: 1.1.1
+Tested up to: 6.7
+Stable tag: 1.1.2
 Requires PHP: 5.4+
 Donate link: N/A
 License: GPLv2 or later
